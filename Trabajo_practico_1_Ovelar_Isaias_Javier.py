@@ -24,12 +24,12 @@ def a4():
 #Actividad 5
 def a5():
     tiempo = input("Ingrese el tiempo en segundos: ")
-    print(f"El tiempo ingresado equivale a {float(tiempo)/3600} horas ")
+    print(f"El tiempo ingresado equivale a {round(float(tiempo)/3600,2)} horas ")
 
 #Actividad 6
 def a6(): 
     numero = input("Ingrese un numero: ")
-    for i in range(1,10,1):
+    for i in range(1,11,1):
         print(f"{numero} x {i} = {i*int(numero)} ")
 
 #Actividad 7
@@ -45,19 +45,19 @@ def a7():
 def a8():
     altura=int(input("Ingrese su altura en centimetros: "))
     peso=float(input("Ingres su peso en kilos: "))
-    print(f"Su IMC es de {peso/((altura/100)**2)}")
+    print(f"Su IMC es de {round(peso/((altura/100)**2),2)}")
 
 #Actividad 9
 def a9():
-    tempCelcius=float(input("Ingrese la temperatura en celcius: "))
-    print(f"La temperatura ingresada ({tempCelcius}) equivale a {(9/5*tempCelcius)+32} grados Fahrenheit")
+    tempCelcius=float(input("Ingrese la temperatura en celsius: "))
+    print(f"La temperatura ingresada ({tempCelcius}) en celsius equivale a {round((9/5*tempCelcius)+32,2)} grados Fahrenheit")
 
 #Actividad 10
 def a10():
     num1 = input("Ingrese el primer numero: ")
     num2 = input("Ingrese el segundo numero: ")
     num3 = input("Ingrese el tercer numero: ")
-    print(f"El promedio es de {(int(num1)+int(num2)+int(num3))/3}")
+    print(f"El promedio es de {round((int(num1)+int(num2)+int(num3))/3,2)}")
 
 a1()
 a2()
