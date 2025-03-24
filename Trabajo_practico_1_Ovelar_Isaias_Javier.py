@@ -20,5 +20,26 @@ def a5():
     tiempo = input("Ingrese el tiempo en segundos: ")
     print(f"El tiempo ingresado equivale a {float(tiempo)/3600} horas ")
 
-def a6():
-    
+def a6(): 
+    numero = input("Ingrese un numero: ")
+    for i in range(1,10,1):
+        print(f"{numero} x {i} = {i*int(numero)} ")
+
+def a7(): 
+    numero1 = int(input("Ingrese el primer numero: "))
+    numero2 = int(input("Ingrese el segundo numero: "))
+    print(f"{numero1} + {numero2} = {numero1+numero2}")
+    print(f"{numero1} - {numero2} = {numero1-numero2}")
+    print(f"{numero1} * {numero2} = {numero1*numero2}")
+    print(f"{numero1} / {numero2} = {numero1/numero2}")
+
+def a8():
+    altura=int(input("Ingrese su altura en centimetros: "))
+    peso=float(input("Ingres su peso en kilos: "))
+    print(f"Su IMC es de {peso/((altura/100)**2)}")
+
+def a9():
+    tempCelcius=float(input("Ingrese la temperatura en celcius: "))
+    print(f"La temperatura ingresada ({tempCelcius}) equivale a {(9/5*tempCelcius)+32} grados Fahrenheit")
+
+def a10():
