@@ -165,9 +165,9 @@ def actividad10():
     stringFecha=""
     fechaValida=False
     while fechaValida is False:
-        stringfecha = input("Ingrese una fecha en el formato DD-MM-AA") #https://docs.python.org/es/3.13/library/datetime.html
+        stringFecha = input("Ingrese una fecha en el formato DD-MM-AA: ") #https://docs.python.org/es/3.13/library/datetime.html
         try:                                                            #https://docs.python.org/es/3.13/tutorial/errors.html
-            stringfecha=datetime(stringFecha,"%%d-%m-%y")
+            stringFecha=datetime.strptime(stringFecha,"%d-%m-%y")
             fechaValida=True
         except ValueError:
             print("Fecha invalida!")
