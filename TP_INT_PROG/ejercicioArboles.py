@@ -1,17 +1,15 @@
 import arbol
+import ListaEnlazada
+arbol=arbol.ArbolBinario()
 
-arbolNuevo = arbol.NodoArbol(0)
-arbolNuevo.insertarRecursivo(4000)
-arbolNuevo.insertarRecursivo(5)
-arbolNuevo.insertarRecursivo(9)
-arbolNuevo.insertarRecursivo(21)
-arbolNuevo.insertarRecursivo(60)
+arbol.insertar(1)
+arbol.insertar(20)
+arbol.insertar(50)
+arbol.insertar(-1)
+arbol.insertar(100)
+arbol.insertar(7)
 
-print("INORDER")
-arbolNuevo.mostrarInorderRec()
-print("POSTORDER")
-arbolNuevo.mostrarPostOrderRec()
-print("PREORDER")
-arbolNuevo.mostrarPreOrderRec()
-print("INVERTIDO")
-arbolNuevo.mostrarInvertido()
+arbol.mostrar()
+
+listaEnlazada=ListaEnlazada.NodoLista(0);
+ins

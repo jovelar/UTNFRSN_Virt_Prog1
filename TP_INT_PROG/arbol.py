@@ -1,57 +1,48 @@
-#Arbol Binario
-class NodoArbol:
-    def __init__(self, dato):
-        self.dato = dato
-        self.izquierda = None
-        self.derecha = None
+class Nodo:
+    def __init__(self,dato):
+        self.dato=dato
+        self.izquierda=None
+        self.derecha=None
+    
 
+class ArbolBinario:
+    def __init__(self):
+        self.raiz=None
+
+    def insertar(self,dato):
+        if self.raiz==None:
+            self.raiz=Nodo(dato)
+        else:
+            self.insertarRecursivo(self.raiz,dato)
+    
+    def mostrar(self):
+        if self.raiz==None:
+            print("Lista vacia!")
+        else:
+            self.mostrarInorderRec(self.raiz)
     #Inserta de forma recursiva.
-    def insertarRecursivo(self, dato):
+    
+    def insertarRecursivo(self,nodo,dato):
         #Si el dato nuevo es menor al dato del arbol existente, se prosigue hacia el nodo izquierdo
-        if dato < self.dato:
+        if dato < nodo.dato:
             #si el nodo esta vacio, se crea un nodo nuevo y se apunta la referencia al mismo
-            if self.izquierda is None:
-                self.izquierda = NodoArbol(dato)
+            if nodo.izquierda is None:
+                nodo.izquierda = Nodo(dato)
             else:
             #Si no esta vacio, se continua avanzando por la izquierda
-                self.izquierda.insertarRecursivo(dato)
+                self.insertarRecursivo(nodo.izquierda,dato)
         #Si el dato nuevo es mayor al dato del nodo, se prosigue hacia el nodo derecho
         else:
             #Si esta vacio, se crea un nodo nuevo y se apunta la referencia al mismo
-            if self.derecha is None:
-                self.derecha = NodoArbol(dato)
+            if nodo.derecha is None:
+                nodo.derecha = Nodo(dato)
             else:
             #Si no esta vacio, se continua avanzando por la derecha
-                self.derecha.insertarRecursivo(dato)
-    
-    #Muestra Ordenado
-    def mostrarInorderRec(self):
-        if self.izquierda!=None:
-            self.izquierda.mostrarInorderRec()
-        print(self.dato)
-        if self.derecha!=None:
-            self.derecha.mostrarInorderRec()
-    
-    #Muestra antes de avanzar. La lista se muestra como fue cargada
-    def mostrarPreOrderRec(self):
-        print(self.dato)
-        if self.izquierda!=None:
-            self.izquierda.mostrarPreOrderRec()
-        if self.derecha!=None:
-            self.derecha.mostrarPreOrderRec()
-    
-    #Muestra la lista invertida a como fue cargada
-    def mostrarPostOrderRec(self):
-        if self.izquierda!=None:
-            self.izquierda.mostrarPostOrderRec()
-        if self.derecha!=None:
-            self.derecha.mostrarPostOrderRec()
-        print(self.dato)
+                self.insertarRecursivo(nodo.derecha,dato)
 
-        #Muestra Ordenado
-    def mostrarInvertido(self):        
-        if self.derecha!=None:
-            self.derecha.mostrarInvertido()
-        print(self.dato)
-        if self.izquierda!=None:
-            self.izquierda.mostrarInvertido()
+    def mostrarInorderRec(self,nodo):
+        if nodo.izquierda!=None:
+            self.mostrarInorderRec(nodo.izquierda)
+        print(nodo.dato)
+        if nodo.derecha!=None:
+            self.mostrarInorderRec(nodo.derecha)
